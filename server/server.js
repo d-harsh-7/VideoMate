@@ -14,6 +14,9 @@ app.use(cors())
 app.use(express.json())
 
 //now i want to create a space for authentication and authorization...
+app.get("/health",(req,res)=>{
+    res.send({message:"Ok"})
+})
 
 app.get("/test/api",(req,res)=>{
     res.send({message:"Backend is Working"})
