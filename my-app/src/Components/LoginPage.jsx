@@ -11,7 +11,7 @@ function LoginPage(){
     return (
         <div className="container1">
             <div className="loginPhoto">
-                <img src='../src/assets/LoginPage.avif' alt="login Photo" />
+                <img src='../public/assets/LoginPage.avif' alt="login Photo" />
             </div>
             <div className="authPane">
                 <div className="buttonContainer">
