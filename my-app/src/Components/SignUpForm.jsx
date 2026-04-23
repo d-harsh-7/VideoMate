@@ -14,7 +14,7 @@ function SignUpForm(){
     const handleRedirect = async (e) => {
         e.preventDefault();
         try{
-            const response=await fetch("http://localhost:3000/signup",{
+            const response=await fetch("https://videomate-gumn.onrender.com/signup",{
                 method:"POST",
                 headers: {
                     "Content-Type": "application/json",
