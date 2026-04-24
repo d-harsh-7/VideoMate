@@ -8,7 +8,7 @@ function Main(){
     const [progressValue, setProgressValue] = useState(0);
     const [videoPreviewUrl, setVideoPreviewUrl] = useState("");
 
-    const THIRD_PARTY_API_URL = "https://your-api-endpoint.com/upload";
+    const THIRD_PARTY_API_URL = "https://videomatemlmodelservice.onrender.com/predict";
 
     const handleFileChange = (event) => {
         const file = event.target.files?.[0] || null;
@@ -39,7 +39,7 @@ function Main(){
         }
 
         const formData = new FormData();
-        formData.append("video", selectedFile);
+        formData.append("file", selectedFile);
 
         try {
             setUploadStatus("Uploading video...");
