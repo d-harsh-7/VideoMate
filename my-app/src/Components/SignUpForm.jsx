@@ -22,7 +22,30 @@ function SignUpForm(){
                 body: JSON.stringify(formData),
             });
             const data = await response.json();
-            setMsg(data.message || "Request completed");
+            const apiPayload = typeof data === "object" && data !== null ? data : {};
+            const nestedMessage = typeof apiPayload.message === "object" && apiPayload.message !== null
+                ? apiPayload.message
+                : {};
+
+            let prediction = apiPayload.prediction ?? nestedMessage.prediction;
+            let confidence = apiPayload.confidence ?? nestedMessage.confidence;
+
+            if (!prediction && typeof apiPayload.message === "string") {
+                try {
+                    const parsed = JSON.parse(apiPayload.message);
+                    prediction = prediction ?? parsed.prediction;
+                    confidence = confidence ?? parsed.confidence;
+                } catch {
+                    // ignore non-JSON string message
+                }
+            }
+
+            const formattedMessage = [
+                prediction != null ? `Prediction: ${prediction}` : "",
+                confidence != null ? `Confidence: ${Number(confidence).toFixed(3)}` : ""
+            ].filter(Boolean).join(" | ");
+
+            setMsg(formattedMessage || "Request completed");
 
             if (response.ok) {
                 navigate("/home");
@@ -53,7 +76,7 @@ function SignUpForm(){
             <input id="signup-password" type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Create a secure password" required/>
 
             <input type="submit" value="Create Account" className="auth-submit"/>
-            <p>{message}</p>
+            <p className="authFormMessage">{message}</p>
         </form>
     </div>
     );

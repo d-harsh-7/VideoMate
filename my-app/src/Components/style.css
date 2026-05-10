@@ -138,6 +138,18 @@
   box-shadow: 0 16px 26px rgba(12, 110, 158, 0.36);
 }
 
+.authFormMessage {
+  margin-top: 0.85rem;
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+  background: rgba(14, 122, 172, 0.08);
+  border: 1px solid rgba(14, 122, 172, 0.2);
+  color: #0f4d69;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
 @media (max-width: 900px) {
   .container1 {
     flex-direction: column;

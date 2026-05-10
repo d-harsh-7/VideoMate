@@ -21,7 +21,6 @@ function NavBar(){
             </ul>
 
             <div className="nav-actions">
-                <a href="#">UserName</a>
                 <a href="#" onClick={handleRedirect}>Logout</a>
             </div>
         </nav>

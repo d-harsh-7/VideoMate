@@ -8,7 +8,7 @@ function Main(){
     const [progressValue, setProgressValue] = useState(0);
     const [videoPreviewUrl, setVideoPreviewUrl] = useState("");
 
-    const THIRD_PARTY_API_URL = "https://videomatemlmodelservice.onrender.com/predict";
+    const THIRD_PARTY_API_URL = "http://127.0.0.1:8000/predict";
 
     const handleFileChange = (event) => {
         const file = event.target.files?.[0] || null;
@@ -91,7 +91,7 @@ function Main(){
 
                     <div className="hero-highlights">
                         <div className="highlight-card">
-                            <strong>95%+</strong>
+                            <strong>75%+</strong>
                             <span>Detection confidence benchmark</span>
                         </div>
                         <div className="highlight-card">
