@@ -8,7 +8,7 @@ function Main(){
     const [progressValue, setProgressValue] = useState(0);
     const [videoPreviewUrl, setVideoPreviewUrl] = useState("");
 
-    const THIRD_PARTY_API_URL = "http://127.0.0.1:8000/predict";
+    const THIRD_PARTY_API_URL = "https://videomatemlmodelservice.onrender.com/predict";
 
     const handleFileChange = (event) => {
         const file = event.target.files?.[0] || null;
